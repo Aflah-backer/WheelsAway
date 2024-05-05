@@ -1,24 +1,21 @@
-import CustomButton from '../CustomButton';
-import { motion } from 'framer-motion';
+import CustomButton from "../CustomButton";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const scrollTo = () => {
-    const ele: HTMLElement | null =
-      document.getElementById('catalogue');
+    const ele: HTMLElement | null = document.getElementById("catalogue");
 
-    ele?.scrollIntoView({ behavior: 'smooth' });
+    ele?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="hero">
       <div className="flex-1 pt-36 padding-x max-h-[920px]">
-        <h1 className="hero__title">
-        Feel the Freedom, Start the Journey!
-        </h1>
+        <h1 className="hero__title">Feel the Freedom, Start the Journey!</h1>
         <p className="hero__subtitle text-gray-200">
-        Ready for an unforgettable journey with gold standard service
-           will you? Experience car rental with Gold Options
-           You can make every moment special by crowning it.
+          Cruise in unparalleled elegance and style with our curated selection
+          of luxury vehicles, where every journey is a testament to opulence and
+          refinement{" "}
         </p>
 
         <CustomButton

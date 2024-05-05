@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: linear-gradient(to left bottom, #ee058a, #cf5cd0, #948bfc, #47adff, #00c5ff, #00d4fa, #00e2ec, #00edd6, #3cf5b5, #77fa8a, #b0fb57, #ecf60b);
+ background-image: linear-gradient(to right, #1a1a1a, #333333, #4d4d4d, #666666, #808080, #999999, #b3b3b3, #cccccc, #e6e6e6, #ffffff);
   color: white;
   overflow-x: hidden;
 }

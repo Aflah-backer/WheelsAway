@@ -25,13 +25,11 @@ const MainPage = () => {
 
   return (
     <div>
-      <Hero />
-
       <div
         id="catalogue"
-        className="mt-12 padding-x padding-y max-width"
+        className="padding-x padding-y max-width"
       >
-        <div className="home__text-container">
+        <div className="home__text-container mt-20">
           <h1 className="text-4xl font-extrabold">Car Catalog</h1>
           <p>Discover cars you might like !</p>
         </div>
@@ -62,6 +60,7 @@ const MainPage = () => {
           </section>
         )}
       </div>
+      <Hero />
     </div>
   );
 };
