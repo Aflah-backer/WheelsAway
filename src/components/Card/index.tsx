@@ -1,10 +1,11 @@
-import { useState } from 'react';
-import { CarType } from '../../types';
-import CustomButton from '../CustomButton';
-import CarInfo from './CarInfo';
-import DetailModal from './DetailModal';
-import { motion } from 'framer-motion';
-import { generateImage } from '../../utils';
+import { useState } from "react";
+import { CarType } from "../../types";
+import CustomButton from "../CustomButton";
+import CarInfo from "./CarInfo";
+import DetailModal from "./DetailModal";
+import { motion } from "framer-motion";
+import { generateImage } from "../../utils";
+import { Tilt } from "react-tilt";
 
 type CardProps = {
   car: CarType;
@@ -30,16 +31,17 @@ const Card = ({ car }: CardProps) => {
         <span className="text-[19px] font-semibold">₺</span>
         {Math.round(Math.random() * 5000) + 500}
         <span className="text-[14px] self-end font-medium">/gün</span>
-        
       </p>
 
       {/* resim */}
       <div className="relative w-full h-40 my-3">
-        <img
-          src={generateImage(car)}
-          alt="car-pic"
-          className="w-full h-full object-contain"
-        />
+        <Tilt>
+          <img
+            src={generateImage(car)}
+            alt="car-pic"
+            className="w-full h-full object-contain"
+          />
+        </Tilt>
       </div>
 
       {/* alt kısım */}
@@ -47,13 +49,13 @@ const Card = ({ car }: CardProps) => {
         <div className="group-hover:invisible mt-2 w-full flex justify-between text-gray">
           <CarInfo
             icon="/steering-wheel.svg"
-            title={car.transmission === 'a' ? 'Otomatik' : 'Manuel'}
+            title={car.transmission === "a" ? "Otomatik" : "Manuel"}
           />
           <CarInfo
             icon="/tire.svg"
-            title={car.drive ? car.drive.toUpperCase() : 'Belirsiz'}
+            title={car.drive ? car.drive.toUpperCase() : "Belirsiz"}
           />
-          <CarInfo icon="/gas.svg" title={car.city_mpg + 'MPG'} />
+          <CarInfo icon="/gas.svg" title={car.city_mpg + "MPG"} />
         </div>
         <div className="car-card__btn-container">
           <CustomButton

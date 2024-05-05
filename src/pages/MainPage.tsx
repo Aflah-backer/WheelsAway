@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Hero from '../components/Hero';
 import SearchBar from '../components/SearchBar';
 import CustomFilter from './../components/CustomFilter/index';
 import { fetchCars } from '../utils';
@@ -60,7 +59,6 @@ const MainPage = () => {
           </section>
         )}
       </div>
-      <Hero />
     </div>
   );
 };

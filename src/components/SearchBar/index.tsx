@@ -28,6 +28,10 @@ const SearchBar = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     //url'e marke ve model'i query param olarak ekle
+    if (!make.trim() && !model.trim()) {
+      // If both make and model are empty, do not set the parameters
+      return;
+    }
     setParams({
       make: make.toLowerCase(),
       model: model.toLowerCase(),
