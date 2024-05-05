@@ -16,7 +16,7 @@ const ShowMore = () => {
   return (
     <div className="w-full flex-center gap-5 my-10">
       {limit < 30 && (
-        <CustomButton handleClick={handleLimit} title="Daha Fazla" />
+        <CustomButton handleClick={handleLimit} title="Show More" />
       )}
     </div>
   );
