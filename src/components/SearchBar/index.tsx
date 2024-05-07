@@ -22,6 +22,8 @@ const SearchBar = () => {
   const [model, setModel] = useState<string>('');
 
   const [params, setParams] = useSearchParams();
+  console.log(params);
+  
 
   // eventlerde parametrelin tipini kendimiz tanımlyamıyacağımzdan (çok fazla veri)
   // react ta yerleşik olarak bulunan tipleri kullanırız
