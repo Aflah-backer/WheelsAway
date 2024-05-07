@@ -10,12 +10,6 @@ const Header = () => {
           <img width={50} src="/wheelsAway.png" alt="bmw-logo" /> <span className='text-black'>WheelsAway</span>
           </div>
         </Link>
-
-        <CustomButton
-          title="Sign Up"
-          btnType="button"
-          designs="min-w-[130px]"
-        />
       </nav>
     </header>
   );
