@@ -26,9 +26,8 @@ const Card = ({ car }: CardProps) => {
       </h2>
 
       <p className="flex mt-6 text-[32px]">
-        <span className="text-[19px] font-semibold">₺</span>
+        <span className="text-[19px] font-semibold">$</span>
         {Math.round(Math.random() * 5000) + 500}
-        <span className="text-[14px] self-end font-medium">/gün</span>
       </p>
       <div className="relative w-full h-40 my-3">
         <Tilt>
@@ -43,11 +42,11 @@ const Card = ({ car }: CardProps) => {
         <div className="group-hover:invisible mt-2 w-full flex justify-between text-gray">
           <CarInfo
             icon="/steering-wheel.svg"
-            title={car.transmission === "a" ? "Otomatik" : "Manuel"}
+            title={car.transmission === "a" ? "Automatic" : "Manuel"}
           />
           <CarInfo
             icon="/tire.svg"
-            title={car.drive ? car.drive.toUpperCase() : "Belirsiz"}
+            title={car.drive ? car.drive.toUpperCase() : ""}
           />
           <CarInfo icon="/gas.svg" title={car.city_mpg + "MPG"} />
         </div>
