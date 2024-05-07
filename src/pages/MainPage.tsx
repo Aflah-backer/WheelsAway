@@ -14,8 +14,6 @@ const MainPage = () => {
   const [params] = useSearchParams();
 
   useEffect(() => {
-    console.log(params, "params");
-    
     const paramsObj = Object.fromEntries(params.entries());
     fetchCars(paramsObj).then((res: CarType[]) => setCars(res));
   }, [params]);
