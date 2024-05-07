@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import ReactSelect from "react-select";
 import { makes } from "../../constants";
 import { OptionType } from "../../types";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 type ButtonProps = {
   styling: string;
@@ -17,34 +17,27 @@ const SearchButton = ({ styling }: ButtonProps) => {
 };
 
 const SearchBar = () => {
+  const navigate = useNavigate();
   const [make, setMake] = useState<string>("");
   const [model, setModel] = useState<string>("");
-
-  const [params, setParams] = useSearchParams();
-
-  const searchMake = params.get("make");
-  // const searchModel = params.get('model');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!make.trim() && !model.trim()) {
       return;
     }
-    setParams({
-      make: make.toLowerCase(),
-      model: model.toLowerCase(),
-    });
+    navigate(`/?make=${make.toLowerCase()}&model=${model.toLowerCase()}`)
   };
 
   const options: OptionType[] = useMemo(
     () =>
       makes.map((item) => ({
         label: item,
+        
         value: item,
       })),
     [makes]
   );
-
   return (
     <form onSubmit={handleSubmit} className="searchbar gap-3">
       <div className="searchbar__item text-black">
@@ -53,7 +46,6 @@ const SearchBar = () => {
           options={options}
           className="w-full"
         />
-        <input type="text" value={searchMake || ""} hidden />
         <SearchButton styling="sm:hidden" />
       </div>
       <div className="searchbar__item">

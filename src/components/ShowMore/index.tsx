@@ -3,8 +3,6 @@ import CustomButton from '../CustomButton';
 
 const ShowMore = () => {
   const [params, setParams] = useSearchParams();
-
-  // url'den limiti alma
   const limit = Number(params.get('limit')) || 5;
 
   const handleLimit = () => {

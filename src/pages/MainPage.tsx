@@ -9,16 +9,14 @@ import { fuels, years } from './../constants/index';
 import ShowMore from '../components/ShowMore';
 
 const MainPage = () => {
-  // state'i ve state'te tutucağımız verinin tipini tanımlama
   const [cars, setCars] = useState<CarType[]>([]);
 
-  const [params, setParams] = useSearchParams();
+  const [params] = useSearchParams();
 
   useEffect(() => {
-    // urldeki bütün paramları alır ve obje oluşturur
+    console.log(params, "params");
+    
     const paramsObj = Object.fromEntries(params.entries());
-
-    // araba veirlerini al
     fetchCars(paramsObj).then((res: CarType[]) => setCars(res));
   }, [params]);
 
@@ -32,8 +30,6 @@ const MainPage = () => {
           <h1 className="text-4xl font-extrabold">Car Catalog</h1>
           <p>Discover cars you might like !</p>
         </div>
-
-        {/* Filtreleme Alanı */}
         <div className="home__filters">
           <SearchBar />
 
@@ -44,7 +40,6 @@ const MainPage = () => {
         </div>
 
         {!cars || cars.length < 1 ? (
-          // arabalar gelmediyse ekrana uyarı basılır
           <div className="home__error-container">
             <h2>Sorry , No Results Found</h2>
           </div>
