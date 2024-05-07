@@ -21,19 +21,15 @@ const Card = ({ car }: CardProps) => {
       transition={{ duration: 0.3 }}
       className="car-card group"
     >
-      {/* araba ismi */}
       <h2 className="car-card__content-title">
         {car.make} {car.model}
       </h2>
 
-      {/* fiyat alanı */}
       <p className="flex mt-6 text-[32px]">
         <span className="text-[19px] font-semibold">₺</span>
         {Math.round(Math.random() * 5000) + 500}
         <span className="text-[14px] self-end font-medium">/gün</span>
       </p>
-
-      {/* resim */}
       <div className="relative w-full h-40 my-3">
         <Tilt>
           <img
@@ -43,8 +39,6 @@ const Card = ({ car }: CardProps) => {
           />
         </Tilt>
       </div>
-
-      {/* alt kısım */}
       <div className="relative flex w-full mt-2">
         <div className="group-hover:invisible mt-2 w-full flex justify-between text-gray">
           <CarInfo
@@ -67,7 +61,6 @@ const Card = ({ car }: CardProps) => {
         </div>
       </div>
 
-      {/* detay modal'ı */}
       <DetailModal
         isOpen={isOpen}
         closeModal={() => setIsOpen(false)}
