@@ -25,7 +25,7 @@ const SearchBar = () => {
   const searchMake = params.get("make");
   // const searchModel = params.get('model');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!make.trim() && !model.trim()) {
       return;
